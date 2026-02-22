@@ -1,0 +1,32 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: $text-primary;
+  background: var(--background-rgb);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.container {
+  @include container;
+}
+
+.section {
+  padding: $spacing-lg 0;
+  
+  @include md {
+    padding: $spacing-xl 0;
+  }
+  
+  @include lg {
+    padding: $spacing-2xl 0;
+  }
+}

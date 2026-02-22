@@ -1,0 +1,67 @@
+// Брейкпоинты
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Миксины для медиа-запросов
+@mixin sm {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+// Исправлено: убрано число в начале названия
+@mixin xxl {
+  @media (min-width: #{$breakpoint-2xl}) {
+    @content;
+  }
+}
+
+// Миксины для flexbox
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Миксин для контейнера
+@mixin container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-sm;
+  
+  @include md {
+    padding: 0 $spacing-md;
+  }
+  
+  @include lg {
+    padding: 0 $spacing-lg;
+  }
+}
