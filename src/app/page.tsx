@@ -1,8 +1,13 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { Metadata } from "@/components/seo/Metadata";
 import { OpenGraph } from "@/components/seo/OpenGraph";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 
 export default function HomePage() {
+  const router = useRouter();
+
   return (
     <>
       <Metadata title="Главная" />
@@ -65,28 +70,33 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="h-screen flex flex-col justify-between">
-          <div className="">
-            <img
-              className="md:hidden w-full"
-              src="images/backrooms-mobile.webp"
-              alt="mobile"
-            />
-            <img
-              className="hidden md:block lg:hidden w-full"
-              src="images/backrooms-laptop.webp"
-              alt="laptop"
-            />
-            <img
-              className="hidden lg:block w-full"
-              src="images/backrooms-dekstop.webp"
-              alt=""
-            />
-          </div>
+        <div className="h-screen flex flex-col">
+          <img
+            className="md:hidden w-full flex-1 min-h-0"
+            src="images/backrooms-mobile.webp"
+            alt="mobile"
+          />
+          <img
+            className="hidden md:block lg:hidden w-full flex-1 min-h-0"
+            src="images/backrooms-laptop.webp"
+            alt="laptop"
+          />
+          <img
+            className="hidden lg:block w-full flex-1 min-h-0"
+            src="images/backrooms-dekstop.webp"
+            alt="desktop"
+          />
 
-          <div className="flex flex-col gap-8 p-6 lg:p-16 items-center lg:flex-row lg:justify-between">
-            <div />
-            <button>start</button>
+          <div className="flex flex-col gap-8 p-6 items-center lg:grid lg:grid-cols-[1fr_auto_1fr] lg:p-16 lg:gap-16 justify-center">
+            <p></p>
+            <button>
+              <span className="md:hidden">
+                <img src="images/start-mobile.svg" />
+              </span>
+              <span className="hidden md:block">
+                <img src="images/start-desktop.svg" alt="" />
+              </span>
+            </button>
             <p>
               все начинается с чистого листа. <br /> нажмите, чтобы увидеть
               больше.
@@ -98,9 +108,24 @@ export default function HomePage() {
           <div className="absolute top-[40%] pl-6 md:left-1/2 md:top-1/3 md:-translate-x-1/2 md:-translate-y-1/2 md:pl-0 md:text-center ">
             <p className="mb-12 md:mb-8">разделы портфолио</p>
             <div className="flex flex-col gap-4 md:flex-row  md:gap-16">
-              <h1 className="font-bold text-xl">ритейл</h1>
-              <h1 className="font-bold text-xl">интерьеры</h1>
-              <h1 className="font-bold text-xl">графика</h1>
+              <h1
+                onClick={() => router.push("/retail")}
+                className="font-bold text-xl cursor-pointer"
+              >
+                ритейл
+              </h1>
+              <h1
+                onClick={() => router.push("/interiors")}
+                className="font-bold text-xl cursor-pointer"
+              >
+                интерьеры
+              </h1>
+              <h1
+                onClick={() => router.push("/graphics")}
+                className="font-bold text-xl cursor-pointer"
+              >
+                графика
+              </h1>
             </div>
           </div>
           <img

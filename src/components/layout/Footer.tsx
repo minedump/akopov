@@ -10,9 +10,11 @@ export const Footer: React.FC = () => {
         <img
           width={180}
           height={12}
-          src="images/logo.svg"
+          src="/images/logo.svg"
           className="invert m-[0_auto]"
         />
+
+        <div className="w-full h-[1px] bg-black md:w-[1px] md:h-auto" />
 
         <div className="m-[0_auto]">
           <span className="flex flex-col">
