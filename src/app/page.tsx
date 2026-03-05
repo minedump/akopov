@@ -4,10 +4,11 @@ import { useRouter } from "next/navigation";
 import { Metadata } from "@/components/seo/Metadata";
 import { OpenGraph } from "@/components/seo/OpenGraph";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
+import { useState } from "react";
 
 export default function HomePage() {
   const router = useRouter();
-
+  const [isTextVisible, setIsTextVisible] = useState(false);
   return (
     <>
       <Metadata title="Главная" />
@@ -15,7 +16,7 @@ export default function HomePage() {
       <SchemaMarkup type="WebSite" />
 
       <div className="h-full">
-        <div className="h-screen flex items-end p-6 bg-green-400">
+        <div className="h-screen flex items-end p-6 bg-[url('/images/man.jpg')] bg-cover bg-[60%_10%] md:bg-center">
           <div className="text-white">
             <p className="mb-4">SKY VIEW</p>
             <p>
@@ -87,9 +88,13 @@ export default function HomePage() {
             alt="desktop"
           />
 
-          <div className="flex flex-col gap-8 p-6 items-center lg:grid lg:grid-cols-[1fr_auto_1fr] lg:p-16 lg:gap-16 justify-center">
-            <p></p>
-            <button>
+          <div className="grid grid-rows-[1fr_auto_1fr] justify-items-center gap-8 p-6 items-center lg:justify-items-start lg:grid-rows-none lg:grid-cols-[1fr_auto_1fr] lg:p-16 lg:gap-16 justify-center">
+            <p>
+              {" "}
+              {isTextVisible &&
+                "Из чистоты рождается место сосредоточения: мысль обретает контур, тишина — структуру, а пространство становится средой для решений, где форма дисциплинирует содержание и направляет волю."}{" "}
+            </p>
+            <button onClick={() => setIsTextVisible(!isTextVisible)}>
               <span className="md:hidden">
                 <img src="images/start-mobile.svg" />
               </span>

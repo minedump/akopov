@@ -9,10 +9,13 @@ export const Header: React.FC = () => {
   return (
     <header className="bg-transparent fixed w-full">
       <nav className="flex justify-between px-6 pt-6">
-        <img src="/images/logo.svg" alt="logo" />
+        <Link href="/">
+          <img src="/images/logo.svg" alt="logo" />
+        </Link>
         <img
           src="/icons/menu.svg"
           alt="menu"
+          className="cursor-pointer"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
       </nav>
@@ -23,6 +26,7 @@ export const Header: React.FC = () => {
               <img
                 src="/icons/cross.svg"
                 alt="close menu"
+                className="cursor-pointer"
                 onClick={() => setIsMenuOpen(false)}
               />
               <div className="text-white text-end mt-20 ">
