@@ -5,6 +5,8 @@ import { Metadata } from "@/components/seo/Metadata";
 import { OpenGraph } from "@/components/seo/OpenGraph";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
 export default function HomePage() {
   const router = useRouter();
@@ -16,8 +18,34 @@ export default function HomePage() {
       <SchemaMarkup type="WebSite" />
 
       <div className="h-full">
-        <div className="h-screen flex items-end p-6 bg-[url('/images/man.jpg')] bg-cover bg-[60%_10%] md:bg-center">
-          <div className="text-white">
+        {/* bg-[url('/images/man.jpg')] bg-cover bg-[60%_10%] */}
+
+        <div className=" relative h-screen flex items-end">
+          <Swiper
+            navigation={true}
+            modules={[Navigation]}
+            className="mySwiper h-full w-full"
+          >
+            <SwiperSlide>
+              <img
+                src="/images/man.jpg"
+                className="h-full w-full object-cover"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src="/images/man.jpg"
+                className="h-full w-full object-cover"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                src="/images/man.jpg"
+                className="h-full w-full object-cover"
+              />
+            </SwiperSlide>
+          </Swiper>
+          <div className="text-white absolute left-0 bottom-0 z-[1] p-6">
             <p className="mb-4">SKY VIEW</p>
             <p>
               design review <br /> Alexander Akopov <br /> dec 2025

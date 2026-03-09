@@ -11,7 +11,8 @@
     "next": "14.x",
     "react": "^18",
     "react-dom": "^18",
-    "sass": "^1.69.x"
+    "sass": "^1.69.x",
+    "swiper": "^12.1.2"
   },
   "devDependencies": {
     "@types/node": "^20",

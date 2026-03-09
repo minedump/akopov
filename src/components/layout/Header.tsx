@@ -7,7 +7,7 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-transparent fixed w-full">
+    <header className="bg-transparent z-[2] fixed w-full">
       <nav className="flex justify-between px-6 pt-6">
         <Link href="/">
           <img src="/images/logo.svg" alt="logo" />
@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
       </nav>
       {isMenuOpen &&
         createPortal(
-          <div className="fixed top-0 right-0 w-screen h-full md:max-w-[345px] p-6 bg-black">
+          <div className="fixed z-[3] top-0 right-0 w-screen h-full md:max-w-[345px] p-6 bg-black">
             <div className="flex flex-col items-end">
               <img
                 src="/icons/cross.svg"
