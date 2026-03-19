@@ -7,10 +7,12 @@ import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import ButtonSlider from "@/components/ButtonSlider";
 
 export default function HomePage() {
   const router = useRouter();
-  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [swiperIndex, setSwiperIndex] = useState(0);
+  const [roomTextState, setRoomTextState] = useState(0);
   return (
     <>
       <Metadata title="Главная" />
@@ -18,11 +20,10 @@ export default function HomePage() {
       <SchemaMarkup type="WebSite" />
 
       <div className="h-full">
-        {/* bg-[url('/images/man.jpg')] bg-cover bg-[60%_10%] */}
-
-        <div className=" relative h-screen flex items-end">
+        <div className="relative h-screen flex items-end">
           <Swiper
             navigation={true}
+            onSlideChange={(swiper) => setSwiperIndex(swiper.activeIndex)}
             modules={[Navigation]}
             className="mySwiper h-full w-full"
           >
@@ -34,108 +35,86 @@ export default function HomePage() {
             </SwiperSlide>
             <SwiperSlide>
               <img
-                src="/images/man.jpg"
+                src="/images/slider_2.jpg"
                 className="h-full w-full object-cover"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
-                src="/images/man.jpg"
+                src="/images/slider_3.png"
                 className="h-full w-full object-cover"
               />
             </SwiperSlide>
           </Swiper>
-          <div className="text-white absolute left-0 bottom-0 z-[1] p-6">
-            <p className="mb-4">SKY VIEW</p>
-            <p>
-              design review <br /> Alexander Akopov <br /> dec 2025
+          <div className="text-white absolute left-0 bottom-0 z-[1] p-6 md:p-16">
+            <p className="mb-4">
+              {swiperIndex === 2 ? "L’Oreal Paris" : "SKY VIEW"}
+            </p>
+            <p className=" whitespace-pre-line">
+              {swiperIndex === 0
+                ? "проверка чертежей\nАлександр Акопов\n2025"
+                : swiperIndex === 1
+                  ? "авторский надзор\nАлександр Акопов\n2026"
+                  : "презентация торгового оборудования\n3D-анимация\n2026"}
             </p>
           </div>
         </div>
-        <div className="px-16 pt-[120px] pb-10 sm:pb-[120px]">
-          <div className="flex flex-col gap-20 border-b border-b-black pb-20 md:pb-0 md:border-b-0 sm:flex-row sm:gap-16 ">
-            <p className="max-w-[400px]">
-              akopov·design – бутик-агентство, основанное в 2019 году. <br />{" "}
-              <br />
-              Мы создаем проекты, в которых эстетика соединяется с глубиной
-              идеи. Благодаря экспертизе и смелости визуальных решений
-              мы раскрываем индивидуальность клиента в физической или цифровой
-              среде.
-            </p>
-            <p className="max-w-[400px]">
-              Разные дисциплины соединяются в едином подходе. <br />
-              <br /> Дизайн интерьера – ритейл, коммерческие и жилые
-              пространства. Графический дизайн – от айдентики и веба до упаковки
-              и коммуникационных материалов.
-            </p>
+        <div className="bg-[url('/images/bg.png')] bg-cover">
+          <div className="px-16 pt-[120px] pb-10 sm:pb-[120px]">
+            <div className="flex flex-col gap-20 border-b border-b-black pb-20 md:pb-0 md:border-b-0 sm:flex-row sm:gap-16 ">
+              <p className="max-w-[400px]">
+                akopov·design – бутик-агентство, основанное в 2019 году. <br />{" "}
+                <br />
+                Мы создаем проекты, в которых эстетика соединяется с глубиной
+                идеи. Благодаря экспертизе и смелости визуальных решений
+                мы раскрываем индивидуальность клиента в физической или цифровой
+                среде.
+              </p>
+              <p className="max-w-[400px]">
+                Разные дисциплины соединяются в едином подходе. <br />
+                <br /> Дизайн интерьера – ритейл, коммерческие и жилые
+                пространства. Графический дизайн – от айдентики и веба до
+                упаковки и коммуникационных материалов.
+              </p>
+            </div>
+          </div>
+
+          <div className="px-6 py-16 md:px-16 md:py-[120px] lg:py-36 ">
+            <div className="flex flex-col md:items-end gap-[87px] sm:gap-0 md:justify-end ">
+              <p className="md:max-w-80 lg:max-w-[656px]">
+                Пространство - это зеркало. Оно никогда не спорит с отражением,
+                но молча и честно транслирует его содержание.
+                <br />
+                <br /> Каждый элемент оболочки - это отпечаток ее наполнения.
+                Взаимодействуя с ней, можно увидеть суть.
+                <br />
+                <br />
+                Наша миссия - отражение внутренних смыслов, через инструменты
+                сенсорного восприятия.
+                <br />
+                <br />
+                Раскрывая душу языком формы.
+              </p>
+              <img
+                className="md:hidden"
+                src="images/text-mobile.svg"
+                alt="mobile"
+              />
+              <img
+                className="hidden md:block lg:hidden"
+                src="images/text-laptop.svg"
+                alt="laptop"
+              />
+              <img
+                className="hidden lg:block"
+                src="images/text-desktop.svg"
+                alt="desktop"
+              />
+            </div>
           </div>
         </div>
 
-        <div className="px-6 py-16 md:px-16 md:py-[120px] lg:py-36 ">
-          <div className="flex flex-col md:items-end gap-[87px] sm:gap-0 md:justify-end ">
-            <p className="md:max-w-80 lg:max-w-[656px]">
-              Пространство - это зеркало. Оно никогда не спорит с отражением, но
-              молча и честно транслирует его содержание. Каждый элемент оболочки
-              - это отпечаток ее наполнения. Взаимодействуя с ней, можно увидеть
-              суть. Наша миссия - отражение внутренних смыслов,
-              через инструменты сенсорного восприятия. Раскрывая душу языком
-              формы.
-            </p>
-            <img
-              className="md:hidden"
-              src="images/text-mobile.svg"
-              alt="mobile"
-            />
-            <img
-              className="hidden md:block lg:hidden"
-              src="images/text-laptop.svg"
-              alt="laptop"
-            />
-            <img
-              className="hidden lg:block"
-              src="images/text-desktop.svg"
-              alt="desktop"
-            />
-          </div>
-        </div>
-
-        <div className="h-screen flex flex-col">
-          <img
-            className="md:hidden w-full flex-1 min-h-0"
-            src="images/backrooms-mobile.webp"
-            alt="mobile"
-          />
-          <img
-            className="hidden md:block lg:hidden w-full flex-1 min-h-0"
-            src="images/backrooms-laptop.webp"
-            alt="laptop"
-          />
-          <img
-            className="hidden lg:block w-full flex-1 min-h-0"
-            src="images/backrooms-dekstop.webp"
-            alt="desktop"
-          />
-
-          <div className="grid grid-rows-[1fr_auto_1fr] justify-items-center gap-8 p-6 items-center lg:justify-items-start lg:grid-rows-none lg:grid-cols-[1fr_auto_1fr] lg:p-16 lg:gap-16 justify-center">
-            <p>
-              {" "}
-              {isTextVisible &&
-                "Из чистоты рождается место сосредоточения: мысль обретает контур, тишина — структуру, а пространство становится средой для решений, где форма дисциплинирует содержание и направляет волю."}{" "}
-            </p>
-            <button onClick={() => setIsTextVisible(!isTextVisible)}>
-              <span className="md:hidden">
-                <img src="images/start-mobile.svg" />
-              </span>
-              <span className="hidden md:block">
-                <img src="images/start-desktop.svg" alt="" />
-              </span>
-            </button>
-            <p>
-              все начинается с чистого листа. <br /> нажмите, чтобы увидеть
-              больше.
-            </p>
-          </div>
-        </div>
+        <ButtonSlider />
 
         <div className="h-screen relative">
           <div className="absolute top-[40%] pl-6 md:left-1/2 md:top-1/3 md:-translate-x-1/2 md:-translate-y-1/2 md:pl-0 md:text-center ">
