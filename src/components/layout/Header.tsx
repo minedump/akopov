@@ -40,13 +40,13 @@ export const Header: React.FC = () => {
               <p className="mb-6 text-[12px]">разделы портфолио</p>
 
               <div className="flex text-xl font-bold flex-col gap-2">
-                <Link href="/retail">
+                <Link href="/retail" onClick={() => setIsMenuOpen(false)}>
                   <p>ритейл</p>
                 </Link>
-                <Link href="/interiors">
+                <Link href="/interiors" onClick={() => setIsMenuOpen(false)}>
                   <p>жилые интерьеры</p>
                 </Link>
-                <Link href="/graphics">
+                <Link href="/graphics" onClick={() => setIsMenuOpen(false)}>
                   <p>графический дизайн</p>
                 </Link>
               </div>

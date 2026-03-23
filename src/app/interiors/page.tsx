@@ -1,6 +1,7 @@
 import { Metadata } from "@/components/seo/Metadata";
 import { OpenGraph } from "@/components/seo/OpenGraph";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
+import Booklet from "@/components/Booklet";
 
 interface PortfolioItem {
   id: number;
@@ -76,60 +77,77 @@ export default function PortfolioPage() {
           </div>
         </div>
 
-        <div className="flex gap-20 flex-col px-6 py-[112px] md:px-16 md:py-36 lg:py-40 lg:flex-row">
-          <div className="flex gap-6">
-            <p
-              className="font-bold text-[32px] text-end border-r"
-              style={{ writingMode: "sideways-lr" }}
-            >
-              дизайн
-            </p>
-            <div className="flex justify-end flex-col pt-12 gap-3">
-              <div className="flex flex-col gap-2">
-                <p className="text-base">концепция</p>
-                <p className="text-xs">
-                  основополагающая идея и смысловой «каркас» проекта
-                </p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-base">планировочное решение</p>
-                <p className="text-xs">план организации пространства</p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-base">визуализации</p>
-                <p className="text-xs">
-                  фотореалистичные изображения будущего интерьера
-                </p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-base">комплект чертежей</p>
-                <p className="text-xs">техническая документация объекта </p>
+        <div className="bg-noise">
+          <div className="flex gap-20 flex-col px-6 py-[112px] md:px-16 md:py-36 lg:py-40 lg:flex-row">
+            <div className="flex gap-6">
+              <p
+                className="font-bold text-[32px] text-end border-r"
+                style={{ writingMode: "sideways-lr" }}
+              >
+                дизайн
+              </p>
+              <div className="flex justify-end flex-col pt-12 gap-3">
+                <div className="flex flex-col gap-2">
+                  <p className="text-base">концепция</p>
+                  <p className="text-xs">
+                    основополагающая идея и смысловой «каркас» проекта
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <p className="text-base">планировочное решение</p>
+                  <p className="text-xs">план организации пространства</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <p className="text-base">визуализации</p>
+                  <p className="text-xs">
+                    фотореалистичные изображения будущего интерьера
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <p className="text-base">комплект чертежей</p>
+                  <p className="text-xs">техническая документация объекта </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="flex gap-16 flex-col">
-            <div>
-              <p className="border-b pb-6 mb-6 font-bold text-2xl">
-                авторский надзор и комплектация
-              </p>
-              <p className="text-xs">
-                Услуги по сопровождению реализации дизайн-проекта,
-                обеспечивающие соответствие ремонта чертежам и своевременную
-                поставку материалов, мебели.
-              </p>
-            </div>
-            <div>
-              <p className="border-b pb-6 mb-6 font-bold text-2xl">
-                консультации
-              </p>
-              <p className="text-xs">
-                Разбор вопросов клиента: рекомендации по планировочным,
-                стилистическим и цветовым решениям, выбору материалов и
-                поставщиков.
-              </p>
+            <div className="flex gap-16 flex-col">
+              <div>
+                <p className="border-b pb-6 mb-6 font-bold text-2xl">
+                  авторский надзор и комплектация
+                </p>
+                <p className="text-xs">
+                  Услуги по сопровождению реализации дизайн-проекта,
+                  обеспечивающие соответствие ремонта чертежам и своевременную
+                  поставку материалов, мебели.
+                </p>
+              </div>
+              <div>
+                <p className="border-b pb-6 mb-6 font-bold text-2xl">
+                  консультации
+                </p>
+                <p className="text-xs">
+                  Разбор вопросов клиента: рекомендации по планировочным,
+                  стилистическим и цветовым решениям, выбору материалов и
+                  поставщиков.
+                </p>
+              </div>
             </div>
           </div>
+          <Booklet
+            mobileImages={[
+              "/images/interiors-cases/int_mob_1.png",
+              "/images/interiors-cases/int_mob_2.png",
+              "/images/interiors-cases/int_mob_3.png",
+              "/images/interiors-cases/int_mob_4.png",
+              "/images/interiors-cases/int_mob_5.png",
+              "/images/interiors-cases/int_mob_6.png",
+            ]}
+            desktopImages={[
+              "/images/interiors-cases/int_desktop_1.png",
+              "/images/interiors-cases/int_desktop_2.png",
+              "/images/interiors-cases/int_desktop_3.png",
+            ]}
+          />
         </div>
       </div>
     </>

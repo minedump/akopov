@@ -1,6 +1,7 @@
 import { Metadata } from "@/components/seo/Metadata";
 import { OpenGraph } from "@/components/seo/OpenGraph";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
+import Booklet from "@/components/Booklet";
 
 interface PortfolioItem {
   id: number;
@@ -75,7 +76,21 @@ export default function PortfolioPage() {
             </div>
           </div>
         </div>
-        \
+
+        <div className="bg-noise">
+          <Booklet
+            mobileImages={[
+              "/images/retail-cases/ret_m_1.png",
+              "/images/retail-cases/ret_m_2.png",
+              "/images/retail-cases/ret_m_3.png",
+            ]}
+            desktopImages={[
+              "/images/retail-cases/ret_desk_1.png",
+              "/images/retail-cases/ret_desk_2.png",
+              "/images/retail-cases/ret_desk_3.png",
+            ]}
+          />
+        </div>
       </div>
     </>
   );

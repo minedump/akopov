@@ -59,7 +59,7 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-        <div className="bg-[url('/images/bg.png')] bg-cover">
+        <div className="bg-noise">
           <div className="px-16 pt-[120px] pb-10 sm:pb-[120px]">
             <div className="flex flex-col gap-20 border-b border-b-black pb-20 md:pb-0 md:border-b-0 sm:flex-row sm:gap-16 ">
               <p className="max-w-[400px]">

@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-[120px] px-6">
+    <footer className="py-[120px] bg-white px-6">
       <div className="flex flex-col md:flex-row gap-20">
         <img
           width={180}

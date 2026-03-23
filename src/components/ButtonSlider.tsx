@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const images = ["backrooms-dekstop.webp", "room.png"];
+const images = ["backrooms-dekstop.webp", "bed.png", "camp.png", "room.png"];
 
 const texts = [
   "Лист наполняется покоем: форма смягчается, свет углубляется, и возникает личная территория присутствия и восстановления — пространство, где внутреннее звучит ясно и без искажений.",

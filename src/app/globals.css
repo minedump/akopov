@@ -68,3 +68,8 @@ body {
 .img-animate {
   animation: fadeInOut 3500ms ease-in-out forwards;
 }
+
+.bg-noise {
+  background: url("/images/bg.png");
+  background-size: cover;
+}
