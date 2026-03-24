@@ -8,6 +8,7 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (!document) return;
     isMenuOpen
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "auto");
