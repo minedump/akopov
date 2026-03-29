@@ -1,9 +1,17 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+// 1. СНАЧАЛА все @use
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+// 2. ПОТОМ @import (если нужны)
 @import "swiper/css";
 @import "swiper/css/navigation";
 
+// 3. ПОТОМ Tailwind директивы
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// 4. ПОТОМ остальные стили
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
@@ -56,6 +64,7 @@ body {
 .swiper-button-prev::after {
   display: none;
 }
+
 @keyframes fadeInOut {
   0% {
     opacity: 0;

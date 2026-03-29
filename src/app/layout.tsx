@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { YandexMetrika } from "@/components/analytics/YandexMetrika";
 import { SITE_CONFIG } from "@/lib/constants";
-import "./globals.css";
+import "./globals.scss";
 
 export const metadata: Metadata = {
   title: {
