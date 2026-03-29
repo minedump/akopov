@@ -55,10 +55,13 @@ body {
 }
 
 .bg-noise {
-  background: url("/images/bg.png");
+  background: url("/images/bg-noise.webp");
   background-size: cover;
 }
 
+.bg-light-gray {
+  background-color: #EFEFEF;
+}
 
 /* Анимации для меню */
 

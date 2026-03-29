@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="bg-transparent z-[2] fixed w-full">
+    <header className="bg-transparent z-[2] absolute w-full">
       <nav className="flex justify-between items-center px-6 pt-6 md:pt-16 md:px-16">
         <Link href="/">
           <img src="/images/logo.svg" alt="AKOPOV" />
@@ -51,7 +51,7 @@ export const Header: React.FC = () => {
           <div className="flex flex-col items-end w-full h-full">
 
             {/* Отступ сверху */}
-            <div className="h-12 md:h-20"></div>
+            <div className="h-12 md:h-20" />
             
             {/* Контент меню */}
             <div className="menu-content text-white text-end w-full">
@@ -64,7 +64,10 @@ export const Header: React.FC = () => {
                 </Link>
               </div>
 
-              <p className="mb-6 text-[12px] opacity-70">направления:</p>
+              <p className="menu-item mb-6 text-[12px]">
+                направления:
+              </p>
+
               <div className="flex text-xl font-bold flex-col gap-2">
                 <Link className="menu-item" href="/retail" onClick={toggleMenu}>
                   <p className="hover:opacity-70 transition-opacity">

@@ -168,7 +168,7 @@ export default function HomePage() {
           </Swiper>
           
 
-          <div className="px-20 text-white absolute left-0 bottom-0 z-[1] p-6 md:p-16">
+          <div className="md:text-xl text-base px-6 md:px-16 text-white absolute left-0 bottom-0 z-[1] p-6 md:p-16">
             <p className="mb-4">
               { 
                 swiperIndex === 0 ? "SKY VIEW" :
@@ -189,7 +189,7 @@ export default function HomePage() {
         </div>
         
         <div className="bg-noise">
-          <div className="px-16 pt-[120px] pb-10 sm:pb-[120px]">
+          <div className="px-6 md:px-16 pt-[120px] pb-16 sm:pb-[120px]">
             <div className="flex flex-col gap-20 border-b border-b-black pb-20 md:pb-0 md:border-b-0 sm:flex-row sm:gap-16 ">
 
               <div className="max-w-[400px]">
@@ -212,46 +212,48 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="px-6 py-16 md:px-16 md:py-[120px] lg:py-36 ">
-            <div className="flex flex-col md:items-end gap-[87px] sm:gap-0 md:justify-end ">
-              <p className="md:max-w-80 lg:max-w-[656px]">
-                Пространство - это зеркало. Оно никогда не спорит с отражением,
-                но молча и честно транслирует его содержание.
+          <div className="px-6 pt-16 pb-32 md:px-16 md:py-[120px] lg:py-36 ">
+
+            <div className="md:text-xl text-base flex flex-col md:items-end gap-[87px] sm:gap-0 md:justify-end ">
+              <div className="md:max-w-80 lg:max-w-[656px]">
+                <p>Пространство - это зеркало. Оно никогда не спорит с отражением,
+                но молча и честно транслирует его содержание.</p>
                 <br />
-                <br /> Каждый элемент оболочки - это отпечаток ее наполнения.
-                Взаимодействуя с ней, можно увидеть суть.
+                <p>Каждый элемент оболочки - это отпечаток ее наполнения.
+                Взаимодействуя с ней, можно увидеть суть.</p>
                 <br />
+                <p>Наша миссия - отражение внутренних смыслов, через инструменты
+                сенсорного восприятия.</p>
                 <br />
-                Наша миссия - отражение внутренних смыслов, через инструменты
-                сенсорного восприятия.
-                <br />
-                <br />
-                Раскрывая душу языком формы.
-              </p>
+                <p>Раскрывая душу языком формы.</p>
+              </div>
               <img
-                className="md:hidden"
+                className="md:hidden pl-16"
                 src="/images/text-mobile.svg"
                 alt="Доверие и свобода"
                 loading="lazy"
               />
               <img
-                className="hidden md:block lg:hidden"
+                className="hidden md:block lg:hidden self-center"
                 src="/images/text-laptop.svg"
                 alt="Доверие и свобода"
                 loading="lazy"
               />
               <img
-                className="hidden lg:block"
+                className="hidden lg:block self-center"
                 src="/images/text-desktop.svg"
                 alt="Доверие и свобода"
                 loading="lazy"
               />
             </div>
+
           </div>
 
         </div>
 
         <ButtonSlider />
+
+        <div className="md:h-[160px] h-[0] bg-light-gray" />
 
         <div className="h-screen relative">
           <div className="absolute top-[40%] pl-6 md:left-1/2 md:top-1/3 md:-translate-x-1/2 md:-translate-y-1/2 md:pl-0 md:text-center ">
