@@ -51,24 +51,33 @@ export const Header: React.FC = () => {
           <div className="flex flex-col items-end w-full h-full">
 
             {/* Отступ сверху */}
-            <div className="h-12 md:h-16"></div>
+            <div className="h-12 md:h-20"></div>
             
             {/* Контент меню */}
-            <div className="menu-content text-white text-end mt-20 w-full">
-              <p className="mb-6 text-[12px] opacity-70">разделы портфолио</p>
-              <div className="flex text-xl font-bold flex-col gap-3">
-                <Link href="/retail" onClick={toggleMenu}>
-                  <p className="menu-item hover:opacity-70 transition-opacity">
+            <div className="menu-content text-white text-end w-full">
+
+              <div className="flex text-xl font-bold flex-col gap-2 mb-6">
+                <Link className="menu-item" href="/" onClick={toggleMenu}>
+                  <p className="hover:opacity-70 transition-opacity">
+                    главная
+                  </p>
+                </Link>
+              </div>
+
+              <p className="mb-6 text-[12px] opacity-70">направления:</p>
+              <div className="flex text-xl font-bold flex-col gap-2">
+                <Link className="menu-item" href="/retail" onClick={toggleMenu}>
+                  <p className="hover:opacity-70 transition-opacity">
                     ритейл
                   </p>
                 </Link>
-                <Link href="/interiors" onClick={toggleMenu}>
-                  <p className="menu-item hover:opacity-70 transition-opacity">
+                <Link className="menu-item" href="/interiors" onClick={toggleMenu}>
+                  <p className="hover:opacity-70 transition-opacity">
                     жилые интерьеры
                   </p>
                 </Link>
-                <Link href="/graphics" onClick={toggleMenu}>
-                  <p className="menu-item hover:opacity-70 transition-opacity">
+                <Link className="menu-item" href="/graphics" onClick={toggleMenu}>
+                  <p className="hover:opacity-70 transition-opacity">
                     графический дизайн
                   </p>
                 </Link>

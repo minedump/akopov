@@ -32,11 +32,6 @@ export default function HomePage() {
       "/images/slide-2-mobile.webp",
       "/images/slide-3.webp",
       "/images/slide-3-mobile.webp",
-      "/images/building-split.jpg",
-      "/images/building-full.png",
-      "/images/text-mobile.svg",
-      "/images/text-laptop.svg",
-      "/images/text-desktop.svg",
     ];
 
     let loadedCount = 0;
@@ -102,13 +97,13 @@ export default function HomePage() {
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             navigation={true}
-            loop={true} // Включаем бесконечный цикл
-            onSlideChange={(swiper) => setSwiperIndex(swiper.realIndex)} // Используем realIndex для loop режима
+            loop={true}
+            onSlideChange={(swiper) => setSwiperIndex(swiper.realIndex)}
             modules={[Navigation, Autoplay]}
             autoplay={{
-              delay: 8000, // 8 секунд
-              disableOnInteraction: false, // Не отключается после взаимодействия пользователя
-              pauseOnMouseEnter: false, // Не ставится на паузу при наведении
+              delay: 8000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: false,
             }}
             className="mySwiper h-full w-full"
           >
@@ -173,7 +168,7 @@ export default function HomePage() {
           </Swiper>
           
 
-          <div className="text-white absolute left-0 bottom-0 z-[1] p-6 md:p-16">
+          <div className="px-20 text-white absolute left-0 bottom-0 z-[1] p-6 md:p-16">
             <p className="mb-4">
               { 
                 swiperIndex === 0 ? "SKY VIEW" :
@@ -196,20 +191,24 @@ export default function HomePage() {
         <div className="bg-noise">
           <div className="px-16 pt-[120px] pb-10 sm:pb-[120px]">
             <div className="flex flex-col gap-20 border-b border-b-black pb-20 md:pb-0 md:border-b-0 sm:flex-row sm:gap-16 ">
-              <p className="max-w-[400px]">
-                akopov·design – бутик-агентство, основанное в 2019 году. <br />{" "}
+
+              <div className="max-w-[400px]">
+                <p>akopov·design – бутик-агентство, основанное в 2019 году.</p>
                 <br />
-                Мы создаем проекты, в которых эстетика соединяется с глубиной
+                <p>Мы создаем проекты, в которых эстетика соединяется с глубиной
                 идеи. Благодаря экспертизе и смелости визуальных решений
                 мы раскрываем индивидуальность клиента в физической или цифровой
-                среде.
-              </p>
-              <p className="max-w-[400px]">
-                Разные дисциплины соединяются в едином подходе. <br />
-                <br /> Дизайн интерьера – ритейл, коммерческие и жилые
+                среде.</p>
+              </div>
+
+              <div className="max-w-[400px]">
+                <p>Разные дисциплины соединяются в едином подходе.</p>
+                <br />
+                <p>Дизайн интерьера – ритейл, коммерческие и жилые
                 пространства. Графический дизайн – от айдентики и веба до
-                упаковки и коммуникационных материалов.
-              </p>
+                упаковки и коммуникационных материалов.</p>
+              </div>
+
             </div>
           </div>
 
@@ -232,23 +231,24 @@ export default function HomePage() {
               <img
                 className="md:hidden"
                 src="/images/text-mobile.svg"
-                alt="мобильная версия"
+                alt="Доверие и свобода"
                 loading="lazy"
               />
               <img
                 className="hidden md:block lg:hidden"
                 src="/images/text-laptop.svg"
-                alt="версия для ноутбука"
+                alt="Доверие и свобода"
                 loading="lazy"
               />
               <img
                 className="hidden lg:block"
                 src="/images/text-desktop.svg"
-                alt="десктопная версия"
+                alt="Доверие и свобода"
                 loading="lazy"
               />
             </div>
           </div>
+
         </div>
 
         <ButtonSlider />
@@ -280,13 +280,13 @@ export default function HomePage() {
           <img
             className="md:hidden w-full h-[stretch] object-cover"
             src="/images/building-split.jpg"
-            alt=""
+            alt="Разделы портфолио"
             loading="lazy"
           />
           <img
             className="hidden md:block w-full h-[stretch] object-cover"
             src="/images/building-full.png"
-            alt=""
+            alt="Разделы портфолио"
             loading="lazy"
           />
         </div>

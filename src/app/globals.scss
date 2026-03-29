@@ -39,31 +39,7 @@ body {
   }
 }
 
-.swiper-button-prev {
-  background-image: url("/icons/arrow_prev.svg") !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  svg {
-    display: none;
-  }
-}
 
-.swiper-button-next {
-  background-image: url("/icons/arrow_next.svg") !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  svg {
-    display: none;
-  }
-}
-
-.swiper-button-next::after {
-  display: none;
-}
-
-.swiper-button-prev::after {
-  display: none;
-}
 
 @keyframes fadeInOut {
   0% {
@@ -126,15 +102,15 @@ body {
 }
 
 .menu-overlay.open .menu-item:nth-child(1) {
-  animation-delay: 0.3s;
+  animation-delay: 0s;
 }
 
 .menu-overlay.open .menu-item:nth-child(2) {
-  animation-delay: 0.4s;
+  animation-delay: 0s;
 }
 
 .menu-overlay.open .menu-item:nth-child(3) {
-  animation-delay: 0.5s;
+  animation-delay: 0s;
 }
 
 @keyframes fadeIn {
@@ -143,5 +119,69 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+.swiper.swiper-horizontal .swiper-button-prev {
+    left: 0;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    width: 25%;
+    background-image: url("/icons/arrow_prev.svg") !important;
+    background-repeat: no-repeat;
+    background-position: 3.125rem center;
+    svg {
+      display: none;
+    }
+    &:after {
+      display: none;
+    }
+}
+.swiper.swiper-horizontal .swiper-button-next {
+    right: 0;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    width: 25%;
+    background-image: url("/icons/arrow_next.svg") !important;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 3.125rem) center;
+    svg {
+      display: none;
+    }
+    &:after {
+      display: none;
+    }
+}
+.hamburger-react {
+  height: 2rem !important;
+  width: 2rem !important;
+  opacity: 0.66;
+  div:first-child {
+    top: 12px !important;
+    height: 2px !important;
+    left: 0 !important;
+  }
+  div:nth-child(2) {
+    top: 20px !important;
+    height: 2px !important;
+    left: 0 !important;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  &[aria-expanded="true"] {
+    opacity: 1;
+    div:first-child {
+      transform: rotate(-45deg) translateY(4px) !important;
+      transform-origin: top;
+    }
+    div:nth-child(2) {
+      transform: rotate(45deg) translateY(-6px) !important;
+      transform-origin: top;
+    }
   }
 }
