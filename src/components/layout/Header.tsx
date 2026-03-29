@@ -41,23 +41,36 @@ export const Header: React.FC = () => {
         </div>
       </nav>
 
-      {/* Меню без дублирования иконки */}
-      {isMounted && isMenuOpen && (
-        <div className="fixed z-[3] top-0 right-0 w-screen h-full backdrop-blur-sm md:max-w-[345px] p-6 md:p-16 bg-[#121212E5]">
-          <div className="flex flex-col items-end">
-            {/* Пустой div для отступа, чтобы меню не прилипало к верху */}
+      {/* Меню с CSS классами для анимации */}
+      {isMounted && (
+        <div 
+          className={`menu-overlay fixed z-[3] top-0 right-0 w-screen h-full md:max-w-[345px] p-6 md:p-16 ${
+            isMenuOpen ? 'open' : 'closed'
+          }`}
+        >
+          <div className="flex flex-col items-end w-full h-full">
+
+            {/* Отступ сверху */}
             <div className="h-12 md:h-16"></div>
-            <div className="text-white text-end mt-20">
-              <p className="mb-6 text-[12px]">разделы портфолио</p>
-              <div className="flex text-xl font-bold flex-col gap-2">
+            
+            {/* Контент меню */}
+            <div className="menu-content text-white text-end mt-20 w-full">
+              <p className="mb-6 text-[12px] opacity-70">разделы портфолио</p>
+              <div className="flex text-xl font-bold flex-col gap-3">
                 <Link href="/retail" onClick={toggleMenu}>
-                  <p>ритейл</p>
+                  <p className="menu-item hover:opacity-70 transition-opacity">
+                    ритейл
+                  </p>
                 </Link>
                 <Link href="/interiors" onClick={toggleMenu}>
-                  <p>жилые интерьеры</p>
+                  <p className="menu-item hover:opacity-70 transition-opacity">
+                    жилые интерьеры
+                  </p>
                 </Link>
                 <Link href="/graphics" onClick={toggleMenu}>
-                  <p>графический дизайн</p>
+                  <p className="menu-item hover:opacity-70 transition-opacity">
+                    графический дизайн
+                  </p>
                 </Link>
               </div>
             </div>

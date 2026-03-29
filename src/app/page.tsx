@@ -166,12 +166,13 @@ export default function HomePage() {
                 muted
                 preload="auto"
               >
+                <source src="/images/slide-3.webm" type="video/webm" />
                 <source src="/images/slide-3.mp4" type="video/mp4" />
               </video>
             </SwiperSlide>
           </Swiper>
           
-          
+
           <div className="text-white absolute left-0 bottom-0 z-[1] p-6 md:p-16">
             <p className="mb-4">
               { 
