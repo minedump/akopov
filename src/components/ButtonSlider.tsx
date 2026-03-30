@@ -23,7 +23,7 @@ interface ButtonSliderProps {
 
 const ButtonSlider = ({ 
   animationMode = "crossfade",
-  fadeDuration = 300,
+  fadeDuration = 1500,
   resetDelay = 9000
 }: ButtonSliderProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
