@@ -93,7 +93,7 @@ export default function HomePage() {
       <SchemaMarkup type="WebSite" />
 
       <div className="h-full">
-        <div className="relative h-screen flex items-end">
+        <div className="relative h-dvh flex items-end">
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             navigation={true}
@@ -255,7 +255,7 @@ export default function HomePage() {
 
         <div className="md:h-[160px] h-[0] bg-light-gray" />
 
-        <div className="h-screen relative">
+        <div className="h-dvh relative">
           <div className="absolute top-[40%] pl-6 md:left-1/2 md:top-1/3 md:-translate-x-1/2 md:-translate-y-1/2 md:pl-0 md:text-center ">
             <p className="mb-12 md:mb-8">разделы портфолио</p>
             <div className="flex flex-col gap-4 md:flex-row md:gap-16">

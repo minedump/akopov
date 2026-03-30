@@ -23,10 +23,11 @@ export const Metadata: React.FC<MetadataProps> = ({
   return (
     <Head>
       <title>{pageTitle}</title>
+      {/* Оставляем только один viewport meta с правильными настройками */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content={SITE_CONFIG.author} />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content={SITE_CONFIG.themeColor} />
       <meta name="language" content={SITE_CONFIG.language} />
       
