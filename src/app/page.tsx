@@ -281,13 +281,13 @@ export default function HomePage() {
           </div>
           <img
             className="md:hidden w-full h-[stretch] object-cover"
-            src="/images/building-split.jpg"
+            src="/images/office-half.webp"
             alt="Разделы портфолио"
             loading="lazy"
           />
           <img
             className="hidden md:block w-full h-[stretch] object-cover"
-            src="/images/building-full.png"
+            src="/images/office.webp"
             alt="Разделы портфолио"
             loading="lazy"
           />
