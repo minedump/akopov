@@ -103,7 +103,7 @@ const ButtonSlider = () => {
   const currentSlide = showImage ? slides[currentIndex as number] : null;
 
   return (
-<div className="h-screen flex flex-col md:flex-col">
+<div className="h-dvh flex flex-col md:flex-col">
   {/* Первый контейнер - с изображением */}
   <div 
     className={`
