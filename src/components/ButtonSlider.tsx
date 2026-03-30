@@ -103,41 +103,56 @@ const ButtonSlider = () => {
   const currentSlide = showImage ? slides[currentIndex as number] : null;
 
   return (
-    <div className="h-screen flex flex-col">
-      <div className="relative flex-1 bg-cover bg-center bg-no-repeat overflow-hidden max-h-[320px] md:max-h-[100%]"
-           style={{ backgroundImage: `url('images/backroom.webp')` }}>
-        {showImage && (
-          <img
-            src={`images/${currentSlide?.image}`}
-            alt={`Slide ${(currentIndex as number) + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
-              isTransitioning ? 'opacity-0' : 'opacity-100'
-            }`}
-          />
-        )}
-      </div>
-
-      <div className="bg-light-gray grid grid-rows-[1fr_auto_1fr] justify-items-center gap-8 p-6 items-center lg:justify-items-start lg:grid-rows-none lg:grid-cols-[1fr_auto_1fr] lg:p-16 lg:gap-16 justify-center">
-        <p className={`text-base transition-opacity duration-300 ${
+<div className="h-screen flex flex-col md:flex-col">
+  {/* Первый контейнер - с изображением */}
+  <div 
+    className={`
+      relative bg-cover bg-center bg-no-repeat overflow-hidden
+      md:flex-1
+      h-[320px] md:h-none
+    `}
+    style={{ backgroundImage: `url('images/backroom.webp')` }}
+  >
+    {showImage && (
+      <img
+        src={`images/${currentSlide?.image}`}
+        alt={`Slide ${(currentIndex as number) + 1}`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
           isTransitioning ? 'opacity-0' : 'opacity-100'
-        }`}>
-          {showImage ? currentSlide?.text : ""}
-        </p>
-        
-        <button onClick={handleNext} disabled={isTransitioning}>
-          <span className="md:hidden">
-            <img src="images/start-mobile.svg" alt="Next" />
-          </span>
-          <span className="hidden md:block">
-            <img src="images/start-desktop.svg" alt="Next" />
-          </span>
-        </button>
-        
-        <p className="md:text-xl text-base">
-          все начинается с чистого листа. <br /> нажмите, чтобы увидеть больше.
-        </p>
-      </div>
-    </div>
+        }`}
+      />
+    )}
+  </div>
+
+  {/* Второй контейнер - с контентом */}
+  <div className={`
+    bg-light-gray 
+    grid grid-rows-[1fr_auto_1fr] 
+    justify-items-center gap-8 p-6 items-center 
+    lg:justify-items-start lg:grid-rows-none lg:grid-cols-[1fr_auto_1fr] 
+    lg:p-16 lg:gap-16 justify-center
+    flex-1 md:flex-none
+  `}>
+    <p className={`text-base transition-opacity duration-300 ${
+      isTransitioning ? 'opacity-0' : 'opacity-100'
+    }`}>
+      {showImage ? currentSlide?.text : ""}
+    </p>
+    
+    <button onClick={handleNext} disabled={isTransitioning}>
+      <span className="md:hidden">
+        <img src="images/start-mobile.svg" alt="Next" />
+      </span>
+      <span className="hidden md:block">
+        <img src="images/start-desktop.svg" alt="Next" />
+      </span>
+    </button>
+    
+    <p className="md:text-xl text-base">
+      все начинается с чистого листа. <br /> нажмите, чтобы увидеть больше.
+    </p>
+  </div>
+</div>
   );
 };
 

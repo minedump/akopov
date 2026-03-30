@@ -135,11 +135,15 @@ body {
     background-image: url("/icons/arrow_prev.svg") !important;
     background-repeat: no-repeat;
     background-position: 3.125rem center;
+    opacity: 0.66;
     svg {
       display: none;
     }
     &:after {
       display: none;
+    }
+    &:hover {
+      opacity: 1;
     }
 }
 .swiper.swiper-horizontal .swiper-button-next {
@@ -152,11 +156,15 @@ body {
     background-image: url("/icons/arrow_next.svg") !important;
     background-repeat: no-repeat;
     background-position: calc(100% - 3.125rem) center;
+    opacity: 0.66;
     svg {
       display: none;
     }
     &:after {
       display: none;
+    }
+    &:hover {
+      opacity: 1;
     }
 }
 .hamburger-react {
